@@ -1,4 +1,4 @@
-# Real latching relay module controlled by ESP32 and how to minimize the electrical current in deepsleep mode
+# Real latching relay module controlled by ESP32 and how to minimize its electrical current in deepsleep mode
 **The advantage of a bistable relay is that it remains in its state when its power supply is no longer provided.** When you search for a bistable relay module, you will often notice that the relay component itself is not bistable. In most cases, it's the modules that are bistable. If you remove the power from these modules, their relay returns to its default state.
 
 So far, I have only found one module that includes a true bistable relay controlled with two coils: the **DFRobot Magnetic Latching Relay Module.**
