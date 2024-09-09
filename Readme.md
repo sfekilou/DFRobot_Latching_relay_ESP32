@@ -1,7 +1,7 @@
-
+# Real latching relay module controlled by ESP32 and how to minimize the electrical current
 **The advantage of a bistable relay is that it remains in its state when its power supply is no longer provided.** When you search for a bistable relay module, you will often notice that the relay component itself is not bistable. In most cases, it's the modules that are bistable. If you remove the power from these modules, their relay returns to its default state.
 
-So far, I have only found one module that includes a true bistable relay with two coils: the **DFRobot Magnetic Latching Relay Module.** If the power to this relay is cut, the relay stays in its position. This module can operate entirely on 3.3V, meaning both its power supply and the signals controlling the coils. At 3.3V, the static power consumption of the module is approximately 840µA, which is low, but still significant for the system I want to create. 
+So far, I have only found one module that includes a true bistable relay controlled with two coils: the **DFRobot Magnetic Latching Relay Module.** If the power to this relay is cut, the relay stays in its position. This module can operate entirely on 3.3V, meaning both its power supply and the signals controlling the coils. At 3.3V, the static power consumption of the module is approximately 840µA, which is low, but still significant for the system I want to create. 
 
 Indeed, having an **ESP32 T18_3.0 module** powered by a 3.6V rechargeable Li-Ion battery (type 18650), I want this module to fully power the relay module. However, if I continuously power the relay module using a **Samsung INR18650-35E 3500mAh battery,** I would only have about 5 months of autonomy in full deepsleep mode. On the other hand, if I control the relay module's power via a **PNP transistor,** the autonomy would be about 2 years and 5 months, theoretically, excluding the battery's self-discharge effect. 
 
