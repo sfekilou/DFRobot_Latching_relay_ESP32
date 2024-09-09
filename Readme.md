@@ -7,7 +7,7 @@ So far, I have only found one module that includes a true bistable relay control
 
 If the power to this relay is cut, the relay stays in its position. This module can operate entirely on 3.3V, meaning both its power supply and the signals controlling the coils. At 3.3V, the static power consumption of the module is approximately 840µA, which is low, but still significant for the system I want to create. 
 
-Indeed, having an **ESP32 T18_3.0 module** powered by a 3.6V rechargeable Li-Ion battery (type 18650):
+Indeed, having an **ESP32 T18_3.0 module** powered by a 3.6V rechargeable 18650 Li-Ion battery (blue lines are pin used for the project):
 
 ![Alt text](/Images/TTGO_T18_V3.png)
 ![Alt text](/Images/TTGO_T18_V3_back_Side.png)
@@ -21,9 +21,9 @@ Since my coil control signals driven by the ESP32 kit and the module's power sup
 To use this transistor as a switch, I need to saturate it during operation. The gain at these voltages and currents is about 120. The relay module requires 137mA at 3.3V to switch the relay. I'll consider it needs 150mA.
 
 
-$Ib = Ic/Gain = 0.15A/120 = 0.00125A$ $(1.25mA)$
+$Ib = Ic/\beta = 0.15A/120 = 0.00125A$ $(1.25mA)$
 
-I multiply this value by 4 for a good safety margin. $1.25mAx4 = 5mA$
+I multiply this value by 4 for a good safety margin: $1.25mAx4 = 5mA$ $(0.005A)$
 
 $Rb = (Vin - Vbe)/Ib = (3.3V - 0.8V)/0.005A = 2.5V/0.005A = 500Ω$ Therefore, I select a standard 510Ω resistor
 
