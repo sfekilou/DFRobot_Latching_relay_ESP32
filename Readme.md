@@ -23,9 +23,9 @@ To use this transistor as a switch, I need to saturate it during operation. The 
 
 $Ib = Ic/\beta = 0.15A/120 = 0.00125A$ $(1.25mA)$
 
-I multiply this value by 4 for a good safety margin: $1.25mAx4 = 5mA$ $(0.005A)$
+I multiply this value by 3 for a good safety margin: $1.25mAx4 = 3.75mA$ $(0.00375A)$
 
-$Rb = (Vin - Vbe)/Ib = (3.3V - 0.8V)/0.005A = 2.5V/0.005A = 500Ω$ Therefore, I select a standard 510Ω resistor
+$Rb = (Vin - Vbe)/Ib = (3.3V - 0.9V)/0.00357A = 2.4V/0.00375A = 640Ω$ Therefore, I select a standard 680Ω resistor
 
 
 **Here is my electrical diagram:**
