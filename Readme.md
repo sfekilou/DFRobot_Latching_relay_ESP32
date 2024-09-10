@@ -21,11 +21,15 @@ Since my coil control signals driven by the ESP32 kit and the module's power sup
 To use this transistor as a switch, I need to saturate it during operation. The gain at these voltages and currents is about 120. The relay module requires 137mA at 3.3V to switch the relay. I'll consider it needs 150mA.
 
 
-$Ib = Ic/\beta = 0.15A/120 = 0.00125A$ $(1.25mA)$
+$-Ib = Ic/\beta = 0.15A/120 = 0.00125A$ $(1.25mA)$
 
-I multiply this value by 3 for a good safety margin: $1.25mAx4 = 3.75mA$ $(0.00375A)$
+I multiply this value by 3 for a good safety margin: $1.25mA$ $x$ $4 = 3.75mA$ $(0.00375A)$
 
-$Rb = (Vin - Vbe)/Ib = (3.3V - 0.9V)/0.00357A = 2.4V/0.00375A = 640Ω$ Therefore, I select a standard 680Ω resistor
+$Rb = (Vin - Vbe)/Ib = (3.3V - 0.9V)/0.00357A = 2.4V/0.00375A = 640Ω$ Therefore, I select a standard $680Ω$ resistor
+
+After test, with $680Ω$ resistor: $-Ib = 3.44mA$
+
+The maximum current that can safely flow through the GPIO25 pin of an ESP32 when configured as an OUTPUT and set to LOW is -28mA. It's safe.
 
 
 **Here is my electrical diagram:**
