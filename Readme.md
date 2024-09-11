@@ -32,8 +32,10 @@ After test, with $680Ω$ resistor: $-Ib = 3.44mA$
 The maximum current that can safely flow through the GPIO25 pin of an ESP32 when configured as an OUTPUT and set to LOW is -28mA. It's safe.
 
 
-**Here is my electrical diagram:**
+
+**Here is my electrical diagram.** I illustrated it with 2 AA batteries and 2 LEDs for testing:
 ![Alt text](/Images/Scheme_ESP32_DFRobot_Relay.png)
+
 
 In my test software, I initialize **GPIO27, GPIO26, and GPIO25** as **OUTPUT.** To power the relay module, I need to set **GPIO27 to 0V (LOW).** To turn it off, I set it to **3.3V (HIGH).** Therefore, by default, I set **GPIO27 to HIGH** at the start of my ESP32 and in deepsleep mode.
 
